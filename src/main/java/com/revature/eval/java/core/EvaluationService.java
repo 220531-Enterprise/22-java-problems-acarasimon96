@@ -80,8 +80,18 @@ public class EvaluationService {
      * Value".
      */
     public String printMegaBytesAndKiloBytes(int XX) {
-        // TODO Write an implementation for this method declaration
-        return null;
+        int kbPerMb = 1024;
+
+        String output;
+        if (XX < 0) {
+            output = "Invalid Value";
+        } else {
+            int yy = Math.floorDiv(XX, kbPerMb);
+            int zz = Math.floorMod(XX, kbPerMb);
+
+            output = XX + " KB = " + yy + " MB and " + zz + " KB";
+        }
+        return output;
     }
 
     /**
