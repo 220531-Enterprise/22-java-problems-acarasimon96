@@ -136,7 +136,6 @@ public class EvaluationService {
      * Otherwise, return false;
      */
     public boolean areEqualByThreeDecimalPlaces(double firstNum, double secondNum) {
-        // TODO Write an implementation for this method declaration
         return false;
     }
 
@@ -182,8 +181,17 @@ public class EvaluationService {
      * ZZ represents the calculated days.
      */
     public String printYearsAndDays(long minutes) {
-        // TODO Write an implementation for this method declaration
-        return null;
+        String output;
+
+        if (minutes < 0) {
+            output = "Invalid Value";
+        } else {
+            int totalDays = (int) (minutes / (60 * 24));
+            int years = totalDays / 365;
+            int days = totalDays % 365;
+            output = minutes + " min = " + years + " y and " + days + " d";
+        }
+        return output;
     }
 
     /**
