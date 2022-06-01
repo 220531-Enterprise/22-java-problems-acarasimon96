@@ -48,8 +48,14 @@ public class EvaluationService {
          * Value"
          */
         public static String printConversion(double kilometersPerHour) {
-            // TODO Write an implementation for this method declaration
-            return null;
+            long mph = toMilesPerHour(kilometersPerHour);
+            String output;
+            if (mph < 0) {
+                output = "Invalid Value";
+            } else {
+                output = kilometersPerHour + " km/h = " + mph + " mi/h";
+            }
+            return output;
         }
     }
 
