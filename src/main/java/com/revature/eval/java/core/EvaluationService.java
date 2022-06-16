@@ -271,7 +271,12 @@ public class EvaluationService {
      */
     public String acronym(String phrase) {
         // TODO Write an implementation for this method declaration
-        return null;
+        String a = "";
+        String[] words = phrase.split("( |-)");
+        for (String word : words) {
+            a += word.substring(0, 1).toUpperCase();
+        }
+        return a;
     }
 
     /**
