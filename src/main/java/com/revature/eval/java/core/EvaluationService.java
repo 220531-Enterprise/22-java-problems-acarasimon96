@@ -26,9 +26,7 @@ public class EvaluationService {
                 return -1;
             }
 
-            // 1 mile = 1.609 km
-            long mph = Math.round(kilometersPerHour / 1.609344);
-            return mph;
+            return Math.round(kilometersPerHour / 1.609344);
 
         }
 
@@ -57,6 +55,7 @@ public class EvaluationService {
             }
             return output;
         }
+
     }
 
     /**
@@ -159,9 +158,9 @@ public class EvaluationService {
         // Then pass the parameter to hasTeen method
 
         public static boolean isTeen(int number) {
-            boolean result = number >= 13 && number <= 19;
-            return result;
+            return number >= 13 && number <= 19;
         }
+
     }
 
     /**
@@ -257,7 +256,7 @@ public class EvaluationService {
      */
     public String reverse(String string) {
         String reversed = "";
-        for (int c = string.length() - 1; c > -1; c--) {
+        for (char c : string.toCharArray()) {
             reversed += string.charAt(c);
         }
         return reversed;
@@ -287,13 +286,12 @@ public class EvaluationService {
      * has all sides of different lengths.
      */
     static class Triangle {
+
         private double sideOne;
         private double sideTwo;
         private double sideThree;
 
-        public Triangle() {
-            super();
-        }
+        public Triangle() {}
 
         public Triangle(double sideOne, double sideTwo, double sideThree) {
             this();
@@ -303,7 +301,7 @@ public class EvaluationService {
         }
 
         public double getSideOne() {
-            return sideOne;
+            return this.sideOne;
         }
 
         public void setSideOne(double sideOne) {
@@ -311,7 +309,7 @@ public class EvaluationService {
         }
 
         public double getSideTwo() {
-            return sideTwo;
+            return this.sideTwo;
         }
 
         public void setSideTwo(double sideTwo) {
@@ -319,7 +317,7 @@ public class EvaluationService {
         }
 
         public double getSideThree() {
-            return sideThree;
+            return this.sideThree;
         }
 
         public void setSideThree(double sideThree) {
@@ -519,4 +517,5 @@ public class EvaluationService {
     public int guessingGame(int x, int y) {
         return 0;
     }
+
 }
